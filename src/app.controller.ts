@@ -1,13 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { SmartsheetService } from './smartSheet.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private smartSheetService: SmartsheetService) { }
 
   @Get()
   getHello(): string {
-    this.appService.getSmartSheet();
-    return this.appService.getHello();
+    return this.smartSheetService.getHello();
   }
 }
